@@ -1,11 +1,14 @@
 import React from 'react'
 import { AddTodo } from '../components/AddTodo'
 import NavBar from '@/components/NavBar/NavBar'
+import Providers from './provider'
 
 const page = () => {
   return (
     <main>
-      <NavBar />
+      <Providers>
+        <NavBar />
+      </Providers>
       <AddTodo />
     </main>
   )
