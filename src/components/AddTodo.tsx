@@ -2,6 +2,7 @@
 
 import { useTodos } from "@/context/Todos";
 import React, { FormEvent, useState } from "react";
+import Link from "./NavBar/Links";
 
 export const AddTodo = () => {
   const [todo, setTodo] = useState("");
@@ -10,19 +11,15 @@ export const AddTodo = () => {
 
   const handleOnSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    handleAddTodo(todo);
+    setTodo("");
   };
   return (
     <div>
       <h1 className="text-black dark:text-white text-center text-3xl mt-12 ">
         toDo using typescript+next.js
       </h1>
-      <div className="flex justify-center text-center">
-        <ul className="flex gap-28 mt-6 text-xl border-b-2 border-gray-400">
-          <li>All</li>
-          <li>Active</li>
-          <li>Completed</li>
-        </ul>
-      </div>
+      <Link />
       <form onSubmit={handleOnSubmit} className="text-center mt-8 ">
         <div className="space-x-4">
           <input
